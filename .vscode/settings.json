@@ -1,0 +1,8 @@
+{
+  "deno.enable": true,
+  "deno.lint": false,
+  "javascript.preferences.quoteStyle": "single",
+  "cSpell.words": [
+    "helang"
+  ]
+}
