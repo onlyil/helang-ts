@@ -16,9 +16,13 @@ const shellLauncher = async () => {
     if (!text) continue
     if (text === 'exit') break
     if (text[text.length - 1] !== ';') text += ';'
-    const tokens = new Lexer(text).tokenize()
-    const ast = new Parser(tokens).parse()
-    ast.evaluate(context)
+    try {
+      const tokens = new Lexer(text).tokenize()
+      const ast = new Parser(tokens).parse()
+      ast.evaluate(context)
+    } catch (e) {
+      console.log(`Error: ${e.message}`)
+    }
   }
 }
 
